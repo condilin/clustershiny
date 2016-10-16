@@ -1,9 +1,16 @@
 library(shiny)
+load("consume.RData")
+
 server <- shinyServer(function(input, output){
   output$clplot <- renderPlot({
-    load("consume.RData")
-    d <- dist(consume)
-    plot(hclust(d, method = input$method), 
-            hang = -1)
+    d <- dist(consume[, -1], method = input$method1)
+    hc <- hclust(d, method = input$method2)
+    if(input$lab == TRUE){
+      plot(hc, hang = -1,
+           labels = consume[, 1])
+    } else {
+    plot(hc, hang = -1)
+    }
+    rect.hclust(hc, k = input$num, border = "red")
   })
 })
