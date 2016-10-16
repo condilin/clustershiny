@@ -1,4 +1,5 @@
 library(shiny)
+load("consume.Rdata")
 
 server <- shinyServer(function(input, output){
   output$clplot <- renderPlot({
