@@ -11,6 +11,7 @@ server <- shinyServer(function(input, output){
     } else {
     plot(hc, hang = -1)
     }
-    rect.hclust(hc, k = input$num, border = "red")
+    rect.hclust(hc, k = input$num, 
+                border = rainbow(input$num))
   })
 })
