@@ -1,5 +1,6 @@
 library(shiny)
 require(graphics) 
+load("consume.RData")
 
 server <- shinyServer(function(input, output){
   output$hclplot <- renderPlot({
