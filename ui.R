@@ -25,13 +25,13 @@ ui <- shinyUI(fluidPage(
                               "average", "centroid", "ward.D"),
                   selected = "complete"),
     numericInput(
-      inputId = "hnum",
-      label = "Cluster count",
+       "hnum",
+       "Cluster count",
       value = 4,
       min = 2, max = 30, step = 1),
     checkboxInput(
-      inputId = "lab",
-      label = "Display tag",
+       "lab",
+       "Display tag",
       value = FALSE)
     ),   
     conditionalPanel(
@@ -49,14 +49,13 @@ ui <- shinyUI(fluidPage(
         selected = names(consume[-1])[2]
       ),
       numericInput(
-        inputId = "knum",
-        label = "Cluster count",
+         "knum",
+         "Cluster count",
         value = 4,
         min = 2, max = 30, step = 1)
       )),
     mainPanel(
       plotOutput(outputId = "hclplot"),
-      plotOutput(outputId = "kclplot")
-      
+      plotOutput(outputId = "kclplot")   
     ))
 ))
