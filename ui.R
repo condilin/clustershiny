@@ -2,7 +2,7 @@ library(shiny)
 load("consume.RData")
 
 ui <- shinyUI(fluidPage(
-  titlePanel(h2("Consumption Level")),
+  titlePanel(h3("Consumption Level Cluster Analysis")),
   sidebarLayout(
      sidebarPanel(
        selectInput(
