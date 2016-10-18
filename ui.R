@@ -6,21 +6,21 @@ ui <- shinyUI(fluidPage(
   sidebarLayout(
      sidebarPanel(
        selectInput(
-         inputId = "clustermethod",
-         label = "Choose cluster method",
+          "clustermethod",
+          "Choose cluster method",
          choices = c("Hierarchical", "K-Means"),
          selected = "Hierarchical"),
       conditionalPanel( 
         condition = "input.clustermethod == 'Hierarchical'",
       selectInput(
-        inputId = "samdismethod",
-        label = "Choose sample distance",
+          "samdismethod",
+          "Choose sample distance",
         choices = c("euclidean", "maximum", "manhattan",
                     "canberra", "minkowski"),
         selected = "euclidean"),
       selectInput(
-        inputId = "cladismethod", 
-        label = "Choose class distance",
+          "cladismethod", 
+          "Choose class distance",
                   choices = c("single", "median", "complete",
                               "average", "centroid", "ward.D"),
                   selected = "complete"),
@@ -37,14 +37,14 @@ ui <- shinyUI(fluidPage(
     conditionalPanel(
       condition = "input.clustermethod == 'K-Means'",
       selectInput(
-        inputId = "Variable1",
-        label = "Select variable1",
+        "Variable1",
+        "Select variable1",
         choices = names(consume[-1]),
         selected = names(consume[-1])[1]
       ),
       selectInput(
-        inputId = "Variable2",
-        label = "Select variable2",
+        "Variable2",
+        "Select variable2",
         choices = names(consume[-1]),
         selected = names(consume[-1])[2]
       ),
